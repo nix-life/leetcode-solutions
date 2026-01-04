@@ -1,0 +1,16 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+    public int search(int[] nums, int target) {
+        
+        if (nums.length == 1 && target == nums[0]) {
+            return 0;
+        }
+        int index = Arrays.binarySearch(nums, target); 
+
+        if (index<=-1) return -1;
+
+        return index;
+    }
+}
