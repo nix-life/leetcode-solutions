@@ -1,0 +1,22 @@
+class Solution {
+    public long maxMatrixSum(int[][] matrix) {
+        int len = matrix.length;
+        int a = Integer.MAX_VALUE;
+        int n = 0;
+
+        long sum = 0;
+
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                sum += Math.abs(matrix[i][j]);
+
+                if (matrix[i][j] < 0) n++;
+
+                a = Math.min(a, Math.abs(matrix[i][j]));
+            }
+        }
+
+        if (n % 2 == 0) return sum;
+        else return sum - 2 * a;
+    }
+}
