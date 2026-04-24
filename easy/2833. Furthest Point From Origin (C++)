@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int furthestDistanceFromOrigin(string moves) {
+        int _ = 0;
+        int distance = 0;
+
+        for (char i : moves) {
+            if (i == 'L') {
+                distance--;
+            } else if (i == 'R') {
+                distance++;
+            } else {
+                _++;
+            }
+        }
+
+        if (distance < 0) {
+            return abs(distance-_);
+        } else {
+            return distance+_;
+        }
+    }
+};
